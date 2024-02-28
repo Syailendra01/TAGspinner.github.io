@@ -40,7 +40,7 @@
               color: aliceblue;
               font-size: 1.3em;
               padding-top: 7px;
-              padding-left: 55px;
+              padding-left: 40px;
             "
             >Juicer Portable</span
           >
@@ -95,7 +95,7 @@
               color: rgb(255, 26, 26);
               font-size: 1.3em;
               padding-top: 7px;
-              padding-left: 55px;
+              padding-left: 40px;
             "
             >Juicer Portable</span
           >
@@ -106,8 +106,8 @@
               color: #010101;
               font-size: 1.1em;
               transform: rotate(44deg);
-              padding-top: 10px;
-              padding-left: 75px;
+              padding-top: 5px;
+              padding-left: 30px;
             "
             >Magsafe Powerbank</span
           >
@@ -140,7 +140,7 @@
               color: rgb(255, 26, 26);
               font-size: 1.3em;
               padding-top: 7px;
-              padding-left: 55px;
+              padding-left: 40px;
             "
             >Juicer Portable</span
           >
@@ -151,8 +151,8 @@
               color: aliceblue;
               font-size: 1.1em;
               transform: rotate(44deg);
-              padding-top: 12px;
-              padding-left: 65px;
+              padding-top: 10px;
+              padding-left: 35px;
             "
             >Speaker Bluetooth</span
           >
@@ -185,8 +185,8 @@
               color: aliceblue;
               font-size: 1.2em;
               transform: rotate(44deg);
-              padding-top: 12px;
-              padding-left: 50px;
+              padding-top: 10px;
+              padding-left: 30px;
             "
             >E-Money 1 Juta</span
           >
@@ -197,7 +197,7 @@
               color: #010101;
               font-size: 1.3em;
               padding-top: 7px;
-              padding-left: 55px;
+              padding-left: 40px;
             "
             >Juicer Portable</span
           >
@@ -243,18 +243,19 @@
     <script>
       let wheel = document.querySelector(".wheel");
       let spinBtn = document.querySelector(".spinBtn");
-      let velue = Math.ceil(Math.random() * 3600);
+      let velue = Math.ceil(Math.random() * 10000);
+      let SelectedItem = "";
 
       spinBtn.onclick = function () {
         wheelSpin.play();
         wheel.style.transform = "rotate(" + velue + "deg)";
-        velue += Math.ceil(Math.random() * 3600);
+        velue += Math.ceil(Math.random() * 10000);
 
         setTimeout(function () {
           applause.play();
           Swal.fire({
             title: "Horeeeyyy!",
-            text: "Modal with a custom image.",
+            html: "Selamat kamu mendapatkan   | " + SelectedItem,
             color: "#fff",
             width: 600,
             imageUrl: "assets/Applause.gif",
@@ -264,8 +265,104 @@
             confirmButtonColor: "#ff3f3f",
             background: "#fff url(assets/RouletteBG.png)",
           });
-        }, 5050);
+        }, 5500);
       };
+
+      // function shuffle(array) {
+      //   var currentIndex = array.length,
+      //     randomIndex;
+
+      //   while (0 !== currentIndex) {
+      //     randomIndex = Math.floor(Math.random() * currentIndex);
+      //     currentIndex--;
+      //     [array[currentIndex], array[randomIndex]] = [
+      //       array[currentIndex],
+      //       array[currentIndex],
+      //     ];
+      //   }
+      //   return array;
+      // }
+
+      // let spinBtn = document.querySelector(".spinBtn");
+
+      // spinBtn.onclick = function () {
+      //   wheelSpin.play();
+      //   const wheel = document.querySelector(".wheel");
+      //   const element = document.querySelector(".container");
+      //   let SelectedItem = "";
+
+      //   let TV = shuffle([1890, 2250, 2610]);
+      //   let Setrika = shuffle([1850, 2210, 2570]);
+      //   let Juicer = shuffle([1770, 2130, 2490]);
+      //   let Air = shuffle([1810, 2170, 2530]);
+      //   let Payung = shuffle([1750, 2110, 2470]);
+      //   let Cam = shuffle([1630, 1990, 2350]);
+      //   let Emas = shuffle([1900, 2240, 2590]);
+      //   let Powerbank = shuffle([1570, 1930, 2290]);
+      //   let Friyer = shuffle([1820, 2180, 2560]);
+      //   let Speaker = shuffle([1610, 2080, 2275]);
+      //   let Toaster = shuffle([1560, 1910, 2220]);
+      //   let Money = shuffle([1790, 2270, 2470]);
+      //   let Wacth = shuffle([1600, 2060, 2170]);
+
+      //   let results = shuffle([
+      //     TV[0],
+      //     Setrika[0],
+      //     Juicer[0],
+      //     Air[0],
+      //     Payung[0],
+      //     Cam[0],
+      //     Emas[0],
+      //     Powerbank[0],
+      //     Friyer[0],
+      //     Speaker[0],
+      //     Toaster[0],
+      //     Money[0],
+      //     Wacth[0],
+      //   ]);
+
+      //   if (TV.includes(results[0])) SelectedItem = "Smart TV";
+      //   if (Setrika.includes(results[0])) SelectedItem = "Setrika Uap";
+      //   if (Juicer.includes(results[0])) SelectedItem = "Juicer Portable";
+      //   if (Air.includes(results[0])) SelectedItem = "Car air pump";
+      //   if (Payung.includes(results[0])) SelectedItem = "Payung";
+      //   if (Cam.includes(results[0])) SelectedItem = "Dash Cam";
+      //   if (Emas.includes(results[0])) SelectedItem = "1 GR Emas";
+      //   if (Powerbank.includes(results[0])) SelectedItem = "Magsafe Powerbank";
+      //   if (Friyer.includes(results[0])) SelectedItem = "Air Fryer";
+      //   if (Speaker.includes(results[0])) SelectedItem = "Speaker Bluetooth";
+      //   if (Toaster.includes(results[0])) SelectedItem = "Toaster";
+      //   if (Money.includes(results[0])) SelectedItem = "E-Money 1 Juta";
+      //   if (Wacth.includes(results[0])) SelectedItem = "Smart Wacth";
+
+      //   wheel.style.setProperty("transition", "all ease 5s");
+      //   wheel.style.transform = "rotate(" + results[0] + "deg)";
+      //   element.classList.remove("animate");
+      //   setTimeout(function () {
+      //     element.classList.add("animate");
+      //   }, 5000);
+
+      //   setTimeout(function () {
+      //     applause.play();
+      //     Swal.fire({
+      //       title: "Horeeeyyyyyyy!",
+      //       html: "Selamat kamu menang |" + SelectedItem,
+      //       color: "#fff",
+      //       width: 600,
+      //       imageUrl: "assets/Applause.gif",
+      //       imageWidth: 400,
+      //       imageHeight: 250,
+      //       imageAlt: "Custom image",
+      //       confirmButtonColor: "#ff3f3f",
+      //       background: "#fff url(assets/RouletteBG.png)",
+      //     });
+      //   }, 5500);
+
+      //   setTimeout(function () {
+      //     wheel.style.setProperty("transition", "initial");
+      //     wheel.style.transform = "rotate(90deg)";
+      //   }, 6000);
+      // };
     </script>
   </body>
 </html>
