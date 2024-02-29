@@ -59,8 +59,8 @@ function Roullet() {
           SelectedPicture = "./image/Juicer Portabel.jpg";
           break;
         case value > 189 && value <= 208:
-          SelectedItem = "E-Money 1 Juta";
-          SelectedPicture = "./image/E-money.jpg";
+          SelectedItem = "Speaker Bluetooth";
+          SelectedPicture = "./image/Speaker Bluetooth.jpg";
           break;
         case value > 208 && value <= 226:
           SelectedItem = "Jam Dinding";
@@ -75,8 +75,8 @@ function Roullet() {
           SelectedPicture = "./image/Juicer Portabel.jpg";
           break;
         case value > 265 && value <= 283:
-          SelectedItem = "Speaker Bluetooth";
-          SelectedPicture = "./image/Speaker Bluetooth.jpg";
+          SelectedItem = "E-Money 1 Juta";
+          SelectedPicture = "./image/E-money.jpg";
           break;
         case value > 283 && value <= 301:
           SelectedItem = "Dash Cam";
@@ -108,6 +108,6 @@ function Roullet() {
         confirmButtonColor: "#ff3f3f",
         background: "#fff url(./assets/Yuhuu.gif)",
       });
-    }, 6000);
+    }, 5500);
   }
 }
