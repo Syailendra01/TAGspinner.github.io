@@ -6,6 +6,7 @@ let SelectedPicture = "";
 spinBtn.addEventListener("click", Roullet);
 
 function Roullet() {
+  wheelSpin.play();
   let Rander = Math.random() * 9999;
   Calculate(Rander);
 
@@ -94,6 +95,7 @@ function Roullet() {
           SelectedPicture = "./image/Juicer Portabel.jpg";
           break;
       }
+      applause.play();
       Swal.fire({
         title: "Yeeeeeyyyyy...",
         html: "Selamat kamu mendapatkan | " + SelectedItem,
