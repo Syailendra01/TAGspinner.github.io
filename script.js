@@ -75,7 +75,7 @@ function Roullet() {
           break;
         case value > 265 && value <= 283:
           SelectedItem = "E-Money 1 Juta";
-          SelectedPicture = "./image/E-money.jpg";
+          SelectedPicture = "./image/eMoney.jpg";
           break;
         case value > 283 && value <= 301:
           SelectedItem = "Dash Cam";
