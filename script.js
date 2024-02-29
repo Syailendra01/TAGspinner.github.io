@@ -14,7 +14,6 @@ function Roullet() {
     value = Rander / 360;
     value = (value - parseInt(value.toString().split(".")[0])) * 360;
     wheel.style.transform = "rotate(" + Rander + "deg)";
-    console.log(value);
 
     setTimeout(function () {
       switch (true) {
@@ -111,3 +110,19 @@ function Roullet() {
     }, 5500);
   }
 }
+
+let myDocument = document.documentElement;
+let btn = document.getElementById("btn");
+
+btn.addEventListener("click", () => {
+  btn.style.display = "none";
+  if (myDocument.requestFullscreen) {
+    myDocument.requestFullscreen();
+  } else if (myDocument.msRequestFullscreen) {
+    myDocument.msRequestFullscreen();
+  } else if (myDocument.mozRequestFullscreen) {
+    myDocument.mozRequestFullscreen();
+  } else if (myDocument.webkitRequestFullscreen) {
+    myDocument.webkitRequestFullscreen();
+  }
+});
