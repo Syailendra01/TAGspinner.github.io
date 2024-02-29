@@ -82,11 +82,12 @@
           <span
             style="
               color: #010101;
-              font-size: 1.5em;
+              font-size: 1.1em;
+              transform: rotate(44deg);
               padding-top: 10px;
-              padding-left: 10px;
+              padding-left: 35px;
             "
-            >1 GR Emas</span
+            >Speaker Bluetooth</span
           >
         </div>
         <div class="number" style="--i: 8; --clr: rgb(255, 255, 255)">
@@ -154,7 +155,7 @@
               padding-top: 10px;
               padding-left: 35px;
             "
-            >Speaker Bluetooth</span
+            >1 Gram Emas</span
           >
         </div>
         <div class="number" style="--i: 14; --clr: rgb(255, 240, 77)">
@@ -183,10 +184,9 @@
           <span
             style="
               color: aliceblue;
-              font-size: 1.2em;
-              transform: rotate(44deg);
+              font-size: 1.3em;
               padding-top: 10px;
-              padding-left: 30px;
+              padding-left: 10px;
             "
             >E-Money 1 Juta</span
           >
@@ -249,13 +249,14 @@
       spinBtn.addEventListener("click", Roullet);
 
       function Roullet() {
-        let Rander = Math.random() * 7200;
+        let Rander = Math.random() * 9999;
         Calculate(Rander);
 
         function Calculate(Rander) {
           value = Rander / 360;
           value = (value - parseInt(value.toString().split(".")[0])) * 360;
           wheel.style.transform = "rotate(" + Rander + "deg)";
+          console.log(value);
 
           setTimeout(function () {
             switch (true) {
@@ -291,19 +292,19 @@
                 SelectedItem = "Jam Dinding";
                 SelectedPicture = "./image/Jam Dinding TAG.png";
                 break;
-              case value > 150 && value <= 168:
-                SelectedItem = "Speaker Bluetooth";
-                SelectedPicture = "./image/Speaker Bluetooth.jpg";
+              case value > 150 && value <= 169:
+                SelectedItem = "1 Gram Emas";
+                SelectedPicture = "./image/Emas.png";
                 break;
-              case value > 168 && value <= 187:
+              case value > 169 && value <= 189:
                 SelectedItem = "Juicer Portable";
                 SelectedPicture = "./image/Jucer Portable.jpg";
                 break;
-              case value > 187 && value <= 207:
+              case value > 189 && value <= 208:
                 SelectedItem = "Air Fryer";
                 SelectedPicture = "./image/Air Fryer.jpg";
                 break;
-              case value > 207 && value <= 226:
+              case value > 208 && value <= 226:
                 SelectedItem = "Jam Dinding";
                 SelectedPicture = "./image/Jam Dinding TAG.png";
                 break;
@@ -311,13 +312,13 @@
                 SelectedItem = "Magsafe Powerbank";
                 SelectedPicture = "./image/Megsafe Portable.jpg";
                 break;
-              case value > 245 && value <= 264:
+              case value > 245 && value <= 265:
                 SelectedItem = "Juicer Portable";
                 SelectedPicture = "./image/Jucer Portable.jpg";
                 break;
-              case value > 264 && value <= 283:
-                SelectedItem = "1 Gram Emas";
-                SelectedPicture = "./image/Emas.png";
+              case value > 265 && value <= 283:
+                SelectedItem = "Speaker Bluetooth";
+                SelectedPicture = "./image/Speaker Bluetooth.jpg";
                 break;
               case value > 283 && value <= 301:
                 SelectedItem = "Dash Cam";
@@ -343,7 +344,7 @@
               width: 600,
               imageUrl: SelectedPicture,
               imageWidth: 400,
-              imageHeight: 250,
+              imageHeight: 200,
               imageAlt: "Custom image",
               confirmButtonColor: "#ff3f3f",
               background: "#fff",
