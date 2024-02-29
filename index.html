@@ -7,11 +7,11 @@
     <title>Tunas Auto Graha | Lucky Spinner</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <div class="spinCursor"></div>
       <img src="assets/Roulette1.png" alt="" />
       <div class="spinBtn"><img src="assets/Logo.png" alt="" /></div>
-      <div class="wheel">
+      <div class="wheel" id="wheel">
         <div class="number" style="--i: 1; --clr: rgb(255, 240, 77)">
           <span
             style="
@@ -64,7 +64,7 @@
               padding-top: 10px;
               padding-left: 0;
             "
-            >Payung</span
+            >Jam Dinding</span
           >
         </div>
         <div class="number" style="--i: 6; --clr: rgb(255, 26, 26)">
@@ -120,7 +120,7 @@
               padding-top: 10px;
               padding-left: 0;
             "
-            >Payung</span
+            >Jam Dinding</span
           >
         </div>
         <div class="number" style="--i: 11; --clr: rgb(255, 240, 77)">
@@ -165,7 +165,7 @@
               padding-top: 10px;
               padding-left: 0;
             "
-            >Payung</span
+            >Jam Dinding</span
           >
         </div>
         <div class="number" style="--i: 15; --clr: rgb(255, 255, 255)">
@@ -222,7 +222,7 @@
               padding-top: 10px;
               padding-left: 0;
             "
-            >Payung</span
+            >Jam Dinding</span
           >
         </div>
       </div>
@@ -241,128 +241,116 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-      let wheel = document.querySelector(".wheel");
-      let spinBtn = document.querySelector(".spinBtn");
-      let velue = Math.ceil(Math.random() * 10000);
+      const spinBtn = document.querySelector(".spinBtn");
+      const wheel = document.querySelector(".wheel");
       let SelectedItem = "";
+      let SelectedPicture = "";
 
-      spinBtn.onclick = function () {
-        wheelSpin.play();
-        wheel.style.transform = "rotate(" + velue + "deg)";
-        velue += Math.ceil(Math.random() * 10000);
+      spinBtn.addEventListener("click", Roullet);
 
-        setTimeout(function () {
-          applause.play();
-          Swal.fire({
-            title: "Horeeeyyy!",
-            html: "Selamat kamu mendapatkan   | " + SelectedItem,
-            color: "#fff",
-            width: 600,
-            imageUrl: "assets/Applause.gif",
-            imageWidth: 400,
-            imageHeight: 250,
-            imageAlt: "Custom image",
-            confirmButtonColor: "#ff3f3f",
-            background: "#fff url(assets/RouletteBG.png)",
-          });
-        }, 5500);
-      };
+      function Roullet() {
+        let Rander = Math.random() * 7200;
+        Calculate(Rander);
 
-      // function shuffle(array) {
-      //   var currentIndex = array.length,
-      //     randomIndex;
+        function Calculate(Rander) {
+          value = Rander / 360;
+          value = (value - parseInt(value.toString().split(".")[0])) * 360;
+          wheel.style.transform = "rotate(" + Rander + "deg)";
 
-      //   while (0 !== currentIndex) {
-      //     randomIndex = Math.floor(Math.random() * currentIndex);
-      //     currentIndex--;
-      //     [array[currentIndex], array[randomIndex]] = [
-      //       array[currentIndex],
-      //       array[currentIndex],
-      //     ];
-      //   }
-      //   return array;
-      // }
-
-      // let spinBtn = document.querySelector(".spinBtn");
-
-      // spinBtn.onclick = function () {
-      //   wheelSpin.play();
-      //   const wheel = document.querySelector(".wheel");
-      //   const element = document.querySelector(".container");
-      //   let SelectedItem = "";
-
-      //   let TV = shuffle([1890, 2250, 2610]);
-      //   let Setrika = shuffle([1850, 2210, 2570]);
-      //   let Juicer = shuffle([1770, 2130, 2490]);
-      //   let Air = shuffle([1810, 2170, 2530]);
-      //   let Payung = shuffle([1750, 2110, 2470]);
-      //   let Cam = shuffle([1630, 1990, 2350]);
-      //   let Emas = shuffle([1900, 2240, 2590]);
-      //   let Powerbank = shuffle([1570, 1930, 2290]);
-      //   let Friyer = shuffle([1820, 2180, 2560]);
-      //   let Speaker = shuffle([1610, 2080, 2275]);
-      //   let Toaster = shuffle([1560, 1910, 2220]);
-      //   let Money = shuffle([1790, 2270, 2470]);
-      //   let Wacth = shuffle([1600, 2060, 2170]);
-
-      //   let results = shuffle([
-      //     TV[0],
-      //     Setrika[0],
-      //     Juicer[0],
-      //     Air[0],
-      //     Payung[0],
-      //     Cam[0],
-      //     Emas[0],
-      //     Powerbank[0],
-      //     Friyer[0],
-      //     Speaker[0],
-      //     Toaster[0],
-      //     Money[0],
-      //     Wacth[0],
-      //   ]);
-
-      //   if (TV.includes(results[0])) SelectedItem = "Smart TV";
-      //   if (Setrika.includes(results[0])) SelectedItem = "Setrika Uap";
-      //   if (Juicer.includes(results[0])) SelectedItem = "Juicer Portable";
-      //   if (Air.includes(results[0])) SelectedItem = "Car air pump";
-      //   if (Payung.includes(results[0])) SelectedItem = "Payung";
-      //   if (Cam.includes(results[0])) SelectedItem = "Dash Cam";
-      //   if (Emas.includes(results[0])) SelectedItem = "1 GR Emas";
-      //   if (Powerbank.includes(results[0])) SelectedItem = "Magsafe Powerbank";
-      //   if (Friyer.includes(results[0])) SelectedItem = "Air Fryer";
-      //   if (Speaker.includes(results[0])) SelectedItem = "Speaker Bluetooth";
-      //   if (Toaster.includes(results[0])) SelectedItem = "Toaster";
-      //   if (Money.includes(results[0])) SelectedItem = "E-Money 1 Juta";
-      //   if (Wacth.includes(results[0])) SelectedItem = "Smart Wacth";
-
-      //   wheel.style.setProperty("transition", "all ease 5s");
-      //   wheel.style.transform = "rotate(" + results[0] + "deg)";
-      //   element.classList.remove("animate");
-      //   setTimeout(function () {
-      //     element.classList.add("animate");
-      //   }, 5000);
-
-      //   setTimeout(function () {
-      //     applause.play();
-      //     Swal.fire({
-      //       title: "Horeeeyyyyyyy!",
-      //       html: "Selamat kamu menang |" + SelectedItem,
-      //       color: "#fff",
-      //       width: 600,
-      //       imageUrl: "assets/Applause.gif",
-      //       imageWidth: 400,
-      //       imageHeight: 250,
-      //       imageAlt: "Custom image",
-      //       confirmButtonColor: "#ff3f3f",
-      //       background: "#fff url(assets/RouletteBG.png)",
-      //     });
-      //   }, 5500);
-
-      //   setTimeout(function () {
-      //     wheel.style.setProperty("transition", "initial");
-      //     wheel.style.transform = "rotate(90deg)";
-      //   }, 6000);
-      // };
+          setTimeout(function () {
+            switch (true) {
+              case value > 0 && value <= 18:
+                SelectedItem = "Setrika Uap";
+                SelectedPicture = "./image/Setrika Uap.png";
+                break;
+              case value > 18 && value <= 37:
+                SelectedItem = "Smart TV";
+                SelectedPicture = "./image/Smart TV.jpg";
+                break;
+              case value > 37 && value <= 56:
+                SelectedItem = "Jam Dinding";
+                SelectedPicture = "./image/Jam Dinding TAG.png";
+                break;
+              case value > 56 && value <= 75:
+                SelectedItem = "Smart Wacth";
+                SelectedPicture = "./image/Smartwatch.jpg";
+                break;
+              case value > 75 && value <= 94:
+                SelectedItem = "Juicer Portable";
+                SelectedPicture = "./image/Jucer Portable.jpg";
+                break;
+              case value > 94 && value <= 112:
+                SelectedItem = "E-Money 1 Juta";
+                SelectedPicture = "./image/E-Money.jpg";
+                break;
+              case value > 112 && value <= 130:
+                SelectedItem = "Toester";
+                SelectedPicture = "./image/Toaster.jpg";
+                break;
+              case value > 130 && value <= 150:
+                SelectedItem = "Jam Dinding";
+                SelectedPicture = "./image/Jam Dinding TAG.png";
+                break;
+              case value > 150 && value <= 168:
+                SelectedItem = "Speaker Bluetooth";
+                SelectedPicture = "./image/Speaker Bluetooth.jpg";
+                break;
+              case value > 168 && value <= 187:
+                SelectedItem = "Juicer Portable";
+                SelectedPicture = "./image/Jucer Portable.jpg";
+                break;
+              case value > 187 && value <= 207:
+                SelectedItem = "Air Fryer";
+                SelectedPicture = "./image/Air Fryer.jpg";
+                break;
+              case value > 207 && value <= 226:
+                SelectedItem = "Jam Dinding";
+                SelectedPicture = "./image/Jam Dinding TAG.png";
+                break;
+              case value > 226 && value <= 245:
+                SelectedItem = "Magsafe Powerbank";
+                SelectedPicture = "./image/Megsafe Portable.jpg";
+                break;
+              case value > 245 && value <= 264:
+                SelectedItem = "Juicer Portable";
+                SelectedPicture = "./image/Jucer Portable.jpg";
+                break;
+              case value > 264 && value <= 283:
+                SelectedItem = "1 Gram Emas";
+                SelectedPicture = "./image/Emas.png";
+                break;
+              case value > 283 && value <= 301:
+                SelectedItem = "Dash Cam";
+                SelectedPicture = "./image/Dash Cam.jpg";
+                break;
+              case value > 301 && value <= 321:
+                SelectedItem = "Jam Dinding";
+                SelectedPicture = "./image/Jam Dinding TAG.png";
+                break;
+              case value > 321 && value <= 339:
+                SelectedItem = "Car air pump";
+                SelectedPicture = "./image/Car Air Pump.jpg";
+                break;
+              case value > 339 && value <= 360:
+                SelectedItem = "Juicer Portable";
+                SelectedPicture = "./image/Jucer Portable.jpg";
+                break;
+            }
+            Swal.fire({
+              title: "Yeeeeeyyyyy...",
+              html: "Selamat kamu mendapatkan | " + SelectedItem,
+              color: "#010101",
+              width: 600,
+              imageUrl: SelectedPicture,
+              imageWidth: 400,
+              imageHeight: 250,
+              imageAlt: "Custom image",
+              confirmButtonColor: "#ff3f3f",
+              background: "#fff",
+            });
+          }, 6000);
+        }
+      }
     </script>
   </body>
 </html>
