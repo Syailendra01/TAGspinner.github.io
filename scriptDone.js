@@ -30,8 +30,8 @@ function Roullet() {
           SelectedPicture = "./image/Jam Dinding.jpg";
           break;
         case value > 56 && value <= 75:
-          SelectedItem = "Smart TV";
-          SelectedPicture = "./image/Smart TV.jpg";
+          SelectedItem = "Magsafe Powerbank";
+          SelectedPicture = "./image/Megsafe Portable.jpg";
           break;
         case value > 75 && value <= 93:
           SelectedItem = "Juicer Portable";
@@ -74,14 +74,14 @@ function Roullet() {
           SelectedPicture = "./image/Juicer Portabel.jpg";
           break;
         case value > 265 && value <= 283:
-          SelectedItem = "E-Money 1 Juta";
-          SelectedPicture = "./image/eMoney.jpg";
+          SelectedItem = "Smart TV";
+          SelectedPicture = "./image/Smart TV.jpg";
           break;
-        case value > 283 && value <= 301:
+        case value > 283 && value <= 303:
           SelectedItem = "Dash Cam";
           SelectedPicture = "./image/Dashcam.jpg";
           break;
-        case value > 301 && value <= 321:
+        case value > 303 && value <= 321:
           SelectedItem = "Jam Dinding";
           SelectedPicture = "./image/Jam Dinding.jpg";
           break;
