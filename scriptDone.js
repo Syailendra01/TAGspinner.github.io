@@ -50,8 +50,8 @@ function Roullet() {
           SelectedPicture = "./image/Jam Dinding.jpg";
           break;
         case value > 149 && value <= 169:
-          SelectedItem = "1 Gram Emas";
-          SelectedPicture = "./image/Emas.jpg";
+          SelectedItem = "Air Fryer";
+          SelectedPicture = "./image/Air Fryer.jpg";
           break;
         case value > 169 && value <= 189:
           SelectedItem = "Juicer Portable";
